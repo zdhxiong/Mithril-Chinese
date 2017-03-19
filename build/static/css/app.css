@@ -1,0 +1,169 @@
+
+/* 文档最外层 */
+.doc-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+@media (min-width: 480px) {
+  .doc-container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (min-width: 840px) {
+  .doc-container {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+}
+/* 页面标题 */
+.doc-title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+@media (min-width: 480px) {
+  .doc-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 0 25px 0;
+  }
+}
+
+@media (min-width: 840px) {
+  .doc-title {
+    font-size: 34px;
+    line-height: 40px;
+    margin: 0 400px 30px 0;
+  }
+}
+
+/* 正文章节 */
+.doc-chapter {
+  padding: 0 0 80px 0;
+}
+
+/* 正文二级标题 */
+.doc-chapter-title {
+  padding-bottom: 0.7em;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin: -20px 0 0.8em 0;
+}
+.doc-chapter-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.doc-chapter-title:before {
+  content: '';
+  display: block;
+  height: 90px;
+  visibility: hidden;
+}
+
+.doc-chapter-content {
+
+}
+
+/* 正文的三级标题 */
+.doc-chapter-subtitle {
+  font-weight: 600 !important;
+  font-size: 1.2em !important;
+  padding-bottom: 0.7em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 60px 0 0.8em 0 !important;
+}
+
+/* 底部翻页 */
+.doc-footer-nav {
+  height: 96px;
+}
+
+.doc-footer-nav-left,
+.doc-footer-nav-right {
+  height: 96px;
+}
+
+.doc-footer-nav-left {
+  text-align: left;
+}
+
+.doc-footer-nav-right {
+  text-align: right;
+}
+
+.doc-footer-nav-text {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  line-height: 24px;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.doc-footer-nav-text .mdui-icon {
+  padding-top: 23px;
+  width: 24px;
+}
+
+.doc-footer-nav-text .doc-footer-nav-direction {
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 1px;
+  opacity: 0.55;
+}
+
+.doc-footer-nav-left .mdui-icon {
+  float: left;
+  margin-right: 10px;
+}
+
+.doc-footer-nav-right .mdui-icon {
+  float: right;
+  margin-left: 10px;
+}
+
+.doc-footer-nav-left .doc-footer-nav-chapter {
+  margin-left: 34px;
+}
+
+.doc-footer-nav-right .doc-footer-nav-chapter {
+  margin-right: 34px;
+}
+
+/* 实例代码 */
+.doc-code {
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background: rgba(238,238,238,.35);
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.125);
+}
+
+.doc-code-filename {
+  margin: -12px -16px 12px -16px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.54);
+  background-image: none,-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,.6)),to(rgba(255,255,255,0)));
+  background-image: none,-webkit-linear-gradient(top,rgba(255,255,255,.6) 0,rgba(255,255,255,0) 100%);
+  background-image: none,linear-gradient(to bottom,rgba(255,255,255,.4) 0,rgba(255,255,255,0) 100%);
+  background-position: 50% 50%;
+  background-color: rgba(0, 0, 0, 0.02);
+  user-select: none;
+}
+
+.doc-code code {
+  /*line-height: 1.4 !important;*/
+}
+
