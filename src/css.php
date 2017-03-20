@@ -1,13 +1,13 @@
 <?php
-$vars['title'] = 'API';
+$vars['title'] = 'CSS';
 $vars['filename'] = 'css';
 $vars['prev'] = array(
     'filename' => 'es6',
-    'title' => 'es6'
+    'title' => 'ES6'
 );
 $vars['next'] = array(
     'filename' => 'animation',
-    'title' => 'animation'
+    'title' => '动画'
 );
 ?>
 <?php include SRC_PATH . '/public/header.php'; ?>
