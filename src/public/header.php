@@ -54,7 +54,7 @@
         <a href="./examples.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'examples') {echo 'mdui-list-item-active';}; ?>">示例</a>
 
         <div class="mdui-subheader-inset">关键概念</div>
-        <a href="./vnodes.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'vnodes') {echo 'mdui-list-item-active';}; ?>">Vnodes</a>
+        <a href="./vnodes.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'vnodes') {echo 'mdui-list-item-active';}; ?>">虚拟 DOM</a>
         <a href="./components.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'components') {echo 'mdui-list-item-active';}; ?>">组件</a>
         <a href="./lifecycle-methods.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'lifecycle-methods') {echo 'mdui-list-item-active';}; ?>">Lifecycle methods</a>
         <a href="./keys.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'keys') {echo 'mdui-list-item-active';}; ?>">Keys</a>
