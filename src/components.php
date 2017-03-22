@@ -227,7 +227,134 @@ var FlexibleComponent = {
 }'); ?></code></pre>
 
             <h3 class="doc-chapter-subtitle">不要操作 <code>children</code></h3>
-            <p></p>
+            <p>通常组件需要定义多组子元素。例如，某个组件需要一个可以设置的 title 和 body，这时应该使用自定义的属性，而不是直接对 <code>children</code> 进行解析和操作。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+var Header = {
+    view: function(vnode) {
+        return m(".section", [
+            m(".header", vnode.children[0]),
+            m(".tagline", vnode.children[1]),
+        ])
+    }
+}
+
+m(Header, [
+    m("h1", "My title"),
+    m("h2", "Lorem ipsum"),
+])
+
+// 糟糕的用法
+m(Header, [
+    [
+        m("h1", "My title"),
+        m("small", "A small note"),
+    ],
+    m("h2", "Lorem ipsum"),
+])'); ?></code></pre>
+            <p>上面的组件直接对 <code>children</code> 进行操作，在不仔细阅读相关代码的情况下，很难知道 <code>children[0]</code>、<code>children[1]</code> 代表什么，而使用自定义属性来命名参数则更加清晰易懂：</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 建议这种用法
+var BetterHeader = {
+    view: function(vnode) {
+        return m(".section", [
+            m(".header", vnode.attrs.title),
+            m(".tagline", vnode.attrs.tagline),
+        ])
+    }
+}
+
+m(BetterHeader, {
+    title: m("h1", "My title"),
+    tagline: m("h2", "Lorem ipsum"),
+})
+
+// 清晰的用法
+m(BetterHeader, {
+    title: [
+        m("h1", "My title"),
+        m("small", "A small note"),
+    ],
+    tagline: m("h2", "Lorem ipsum"),
+})'); ?></code></pre>
+
+            <h3 class="doc-chapter-subtitle">静态地定义组件，动态地调用它们</h3>
+            <p><strong>避免在视图中定义组件</strong></p>
+            <p>如果把组件的定义放在了函数中，则每次调用函数时都将创建一个新的组件。当 diff 组件的 vnode 时，两个组件时不相等的，即使它们的代码完全一样。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+var ComponentFactory = function(greeting) {
+    // 每次调用时都会创建一个新组件
+    return {
+        view: function() {
+            return m("div", greeting)
+        }
+    }
+}
+m.render(document.body, m(ComponentFactory("hello")))
+// 第二次调用时又重新创建了一个 div
+m.render(document.body, m(ComponentFactory("hello")))
+
+// 推荐这种用法
+var Component = {
+    view: function(vnode) {
+        return m("div", vnode.attrs.greeting)
+    }
+}
+m.render(document.body, m(Component, {greeting: "hello"}))
+// 第二次调用时不会修改 DOM
+m.render(document.body, m(Component, {greeting: "hello"}))'); ?></code></pre>
+
+            <p><strong>避免在视图外创建组件实例</strong></p>
+            <p>如果在视图外创建组件实例，则重绘时会跳过对组件实例的差异检查。因此，组件实例应该始终在视图内创建：</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+var Counter = {
+    count: 0,
+    view: function(vnode) {
+        return m("div",
+            m("p", "Count: " + vnode.state.count ),
+
+            m("button", {
+                onclick: function() {
+                    vnode.state.count++
+                }
+            }, "Increase count")
+        )
+    }
+}
+
+var counter = m(Counter)
+
+m.mount(document.body, {
+    view: function(vnode) {
+        return [
+            m("h1", "My app"),
+            counter
+        ]
+    }
+})'); ?></code></pre>
+            <p>在上面的示例中，点击组件的 Increase count 按钮会增加 <code>count</code> 的值，但视图不会更新，因为组件的 vnode 引用是同一个，渲染引擎会跳过对它们的差异检查。所以你应该始终在视图中调用组件，确保能创建新的 vnode：</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 建议这种用法
+var Counter = {
+    count: 0,
+    view: function(vnode) {
+        return m("div",
+            m("p", "Count: " + vnode.state.count ),
+
+            m("button", {
+                onclick: function() {
+                    vnode.state.count++
+                }
+            }, "Increase count")
+        )
+    }
+}
+
+m.mount(document.body, {
+    view: function(vnode) {
+        return [
+            m("h1", "My app"),
+            m(Counter)
+        ]
+    }
+})'); ?></code></pre>
         </div>
     </div>
 </div>
