@@ -243,19 +243,67 @@ m("div", {oninit: initialize})'); ?></code></pre>
             <p>要了解更多有关生命周期方法的信息，请参阅<a href="./lifecycle-methods.html">生命周期犯法</a>页面。</p>
         </div>
 
-        <h2 id="keys" class="doc-chapter-title mdui-text-color-theme"><a href="#keys">keys</a></h2>
+        <h2 id="keys" class="doc-chapter-title mdui-text-color-theme"><a href="#keys">key</a></h2>
         <div class="doc-chapter-content mdui-typo">
+            <p>列表中的 vnode 可以拥有一个称为 <code>key</code> 的特殊属性，用于对 DOM 元素进行标记。在生成 vnode 的模型数据改变时，可以通过 <code>key</code> 来找到指定的 DOM 元素。</p>
+            <p>通常，<code>key</code> 应该是数组中的唯一标志字段，即 <code>key</code> 字段的值应该是不重复的。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('var users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Mary"},
+]
 
+function userInputs(users) {
+    return users.map(function(u) {
+        return m("input", {key: u.id}, u.name)
+    })
+}
+
+m.render(document.body, userInputs(users))'); ?></code></pre>
+            <p>当列表中的 vnode 拥有 <code>key</code> 时，如果 <code>users</code> 数组被重新排序、视图被重新渲染，<code>input</code> 元素将按照和以前一致的排序方式进行排列，以便保持正确的焦点和 DOM 状态。</p>
+            <p>了解更多有关 key 的信息，参见 <a href="./keys.html">key</a> 页面。</p>
         </div>
 
-        <h2 id="svg-and-mathml" class="doc-chapter-title mdui-text-color-theme"><a href="#svg-and-mathml">svg-and-mathml</a></h2>
+        <h2 id="svg-and-mathml" class="doc-chapter-title mdui-text-color-theme"><a href="#svg-and-mathml">SVG 和 MathML</a></h2>
         <div class="doc-chapter-content mdui-typo">
-
+            <p>Mithril 完全支持 SVG。Xlink 也是支持的，但与之前 v1.0 版本的 Mithril 不同的是，必须明确定义命名空间：</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('m("svg", [
+    m("image[xlink:href=\'image.gif\']")
+])'); ?></code></pre>
+            <p>MathML 也是完全支持的。</p>
         </div>
 
-        <h2 id="making-templates-dynamic" class="doc-chapter-title mdui-text-color-theme"><a href="#making-templates-dynamic">making-templates-dynamic</a></h2>
+        <h2 id="making-templates-dynamic" class="doc-chapter-title mdui-text-color-theme"><a href="#making-templates-dynamic">使模版动态化</a></h2>
         <div class="doc-chapter-content mdui-typo">
+            <p>因为嵌套的 vnode 是标准的 JavaScript 表达式，所以你可以使用 JavaScript 来操作它们。</p>
 
+            <h3 class="doc-chapter-subtitle">动态文本</h3>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('var user = {name: "John"}
+
+m(".name", user.name) // <div class="name">John</div>'); ?></code></pre>
+
+            <h3 class="doc-chapter-subtitle">循环</h3>
+            <p>使用 <code>Array</code> 方法如 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map</a> 来循环数据列表。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('var users = [
+    {name: "John"},
+    {name: "Mary"},
+]
+
+m("ul", users.map(function(u) { // <ul>
+    return m("li", u.name)      //   <li>John</li>
+                                //   <li>Mary</li>
+}))                             // </ul>
+
+// ES6:
+// m("ul", users.map(u =>
+//   m("li", u.name)
+// ))'); ?></code></pre>
+
+            <h3 class="doc-chapter-subtitle">条件语句</h3>
+            <p>使用三元运算符根据条件来设置视图中的内容。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('var isError = false
+
+m("div", isError ? "An error occurred" : "Saved") // <div>Saved</div>'); ?></code></pre>
+            <p>在 JavaScript 表达式中，不能使用如 <code>if</code> 和 <code>for</code> 这样的 JavaScript 语句。</p>
         </div>
 
         <h2 id="converting-html" class="doc-chapter-title mdui-text-color-theme"><a href="#converting-html">converting-html</a></h2>
