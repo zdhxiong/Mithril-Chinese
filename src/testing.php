@@ -14,6 +14,15 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">测试</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#ospec">ospec 测试框架</a></li>
+            <li><a href="#good-testing-practices">良好的测试实践</a></li>
+            <li><a href="#unit-testing">单元测试</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="ospec" class="doc-chapter-title mdui-text-color-theme"><a href="#ospec">ospec 测试框架</a></h2>
         <div class="doc-chapter-content mdui-typo">

@@ -1,5 +1,5 @@
 <?php
-$vars['title'] = 'API';
+$vars['title'] = 'Promise(executor)';
 $vars['filename'] = 'promise';
 $vars['prev'] = array(
     'filename' => 'version',
@@ -7,7 +7,7 @@ $vars['prev'] = array(
 );
 $vars['next'] = array(
     'filename' => 'stream',
-    'title' => 'stream'
+    'title' => 'stream()'
 );
 ?>
 <?php include SRC_PATH . '/public/header.php'; ?>

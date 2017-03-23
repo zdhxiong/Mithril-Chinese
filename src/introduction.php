@@ -11,6 +11,20 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">介绍</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#what-is-mithril">Mithril 是什么？</a></li>
+            <li><a href="#getting-started">起步</a></li>
+            <li><a href="#hello-world">Hello World</a></li>
+            <li><a href="#dom-elements">DOM 元素</a></li>
+            <li><a href="#components">组件</a></li>
+            <li><a href="#routing">路由</a></li>
+            <li><a href="#xhr">XHR</a></li>
+            <li><a href="#summary">总结</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="what-is-mithril" class="doc-chapter-title mdui-text-color-theme"><a href="#what-is-mithril">Mithril 是什么？</a></h2>
         <div class="doc-chapter-content mdui-typo">

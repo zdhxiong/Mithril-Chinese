@@ -14,8 +14,18 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">动画</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#technology-choices">技术选型</a></li>
+            <li><a href="#animation-on-element-creation">元素创建时的动画</a></li>
+            <li><a href="#animation-on-element-removal">元素移除时的动画</a></li>
+            <li><a href="#performance">性能</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter-content">
-        <h2 id="technology-choices" class="doc-chapter-title mdui-text-color-theme"><a href="#technology-choices">技术选择</a></h2>
+        <h2 id="technology-choices" class="doc-chapter-title mdui-text-color-theme"><a href="#technology-choices">技术选型</a></h2>
         <div class="doc-chapter-content mdui-typo">
             <p>动画可以使应用更生动。现在的浏览器对 CSS 动画的支持已经很好了，而且还有各种<a href="http://velocityjs.org/" target="_blank">库</a>可以提供基于 JavaScript 的动画。如果你喜欢最前沿的技术的话，还有 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" target="_blank">Web API</a> 和 <a href="https://github.com/web-animations/web-animations-js" target="_blank">polyfill</a>。</p>
             <p>Mithril 本身不提供任何动画 API，因为已经有很多其他方案来实现丰富、复杂的动画了。但是，Mithril 提供了钩子，在用传统方法实现动画有困难的情况下，可以使用钩子来实现。</p>

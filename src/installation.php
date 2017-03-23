@@ -14,6 +14,15 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">安装</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#cdn">CDN</a></li>
+            <li><a href="#npm">NPM</a></li>
+            <li><a href="#other">其他相关介绍</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="cdn" class="doc-chapter-title mdui-text-color-theme"><a href="#cdn">CDN</a></h2>
         <div class="doc-chapter-content mdui-typo">

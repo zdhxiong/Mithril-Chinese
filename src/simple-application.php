@@ -14,6 +14,22 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">简单应用教程</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#app-init">初始化应用</a></li>
+            <li><a href="#app-model">创建模型</a></li>
+            <li><a href="#app-view">创建视图</a></li>
+            <li><a href="#app-mount">渲染视图</a></li>
+            <li><a href="#app-style">添加样式</a></li>
+            <li><a href="#add-route">添加路由</a></li>
+            <li><a href="#app-edit">编辑用户</a></li>
+            <li><a href="#app-save">保存用户</a></li>
+            <li><a href="#app-layout">组件布局</a></li>
+            <li><a href="#app-end">结束</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="app-init" class="doc-chapter-title mdui-text-color-theme"><a href="#app-init">初始化应用</a></h2>
         <div class="doc-chapter-content mdui-typo">

@@ -14,6 +14,16 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">JSX</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#description">描述</a></li>
+            <li><a href="#setup">安装</a></li>
+            <li><a href="#jsx-vs-hyperscript">JSX vs hyperscript</a></li>
+            <li><a href="#converting-html">HTML 转换为 hyperscript</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="description" class="doc-chapter-title mdui-text-color-theme"><a href="#description">描述</a></h2>
         <div class="doc-chapter-content mdui-typo">
@@ -182,7 +192,7 @@ var BigComponent = {
             <p>另外，hyperscript 是纯 JavaScript 代码，不像 JSX 那样需要编译才能产生可运行的代码。</p>
         </div>
 
-        <h2 id="converting-html" class="doc-chapter-title mdui-text-color-theme"><a href="#converting-html">转换 HTML</a></h2>
+        <h2 id="converting-html" class="doc-chapter-title mdui-text-color-theme"><a href="#converting-html">HTML 转换为 hyperscript</a></h2>
         <div class="doc-chapter-content mdui-typo">
             <p>在 Mithril 中，要把一个格式规范的 HTML 文件集成到使用 JSX 的项目中，除了复制粘贴外，只需要做少量的修改。</p>
             <p>使用 hyperscript 时，需要把 HTML 代码转为 hyperscript 语法才能运行。为方便起见，你可以使用<a href="http://arthurclemens.github.io/mithril-template-converter/index.html" target="">HTML-to-Mithril 模版转换器</a>。</p>

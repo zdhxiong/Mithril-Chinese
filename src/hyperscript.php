@@ -303,17 +303,85 @@ m("ul", users.map(function(u) { // <ul>
             <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('var isError = false
 
 m("div", isError ? "An error occurred" : "Saved") // <div>Saved</div>'); ?></code></pre>
-            <p>在 JavaScript 表达式中，不能使用如 <code>if</code> 和 <code>for</code> 这样的 JavaScript 语句。</p>
+            <p>在 JavaScript 表达式中，不能使用如 <code>if</code> 和 <code>for</code> 这样的 JavaScript 语句。最好全部使用上面的结构来写模版，以保持模版结构可读性和声明性。</p>
         </div>
 
-        <h2 id="converting-html" class="doc-chapter-title mdui-text-color-theme"><a href="#converting-html">converting-html</a></h2>
+        <h2 id="converting-html" class="doc-chapter-title mdui-text-color-theme"><a href="#converting-html">HTML 转换为 hyperscript</a></h2>
         <div class="doc-chapter-content mdui-typo">
-
+            <p>在 Mithril 中，格式规范的 HTML 就是有效的 JSX 语法。要把一个 HTML 文件集成到一个使用 JSX 的项目中，除了复制粘贴外，要做的其他工作很少。</p>
+            <p>使用 hyperscript 时，需要把 HTML 代码转换为 hyperscript 语法，代码才能运行。为了方便，你可以使用 <a href="http://arthurclemens.github.io/mithril-template-converter/index.html" target="_blank">HTML-to-Mithril-template 模版转换器</a>。</p>
         </div>
 
-        <h2 id="avoid-anti-patterns" class="doc-chapter-title mdui-text-color-theme"><a href="#avoid-anti-patterns">avoid-anti-patterns</a></h2>
+        <h2 id="avoid-anti-patterns" class="doc-chapter-title mdui-text-color-theme"><a href="#avoid-anti-patterns">避免反面模式</a></h2>
         <div class="doc-chapter-content mdui-typo">
+            <p>虽然 Mithril 很灵活，但有些代码模式还是不推荐使用：</p>
 
+            <h3 class="doc-chapter-subtitle">避免使用动态选择器</h3>
+            <p>不同的 DOM 元素有不同的属性，且往往有不同的行为。可变的选择器会泄漏组件的实现细节。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+var BadInput = {
+    view: function(vnode) {
+        return m("div", [
+            m("label"),
+            m(vnode.attrs.type || "input")
+        ])
+    }
+}'); ?></code></pre>
+            <p>建议不要使用变量作为选择器，而是分别针对每个单独的选择器编写代码，或者对代码的可变部分进行重构。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 推荐这种用法
+var BetterInput = {
+    view: function(vnode) {
+        return m("div", [
+            m("label", vnode.attrs.title),
+            m("input"),
+        ])
+    }
+}
+var BetterSelect = {
+    view: function(vnode) {
+        return m("div", [
+            m("label", vnode.attrs.title),
+            m("select"),
+        ])
+    }
+}
+
+// 推荐这种用法
+var BetterLabeledComponent = {
+    view: function(vnode) {
+        return m("div", [
+            m("label", vnode.attrs.title),
+            vnode.children,
+        ])
+    }
+}'); ?></code></pre>
+
+            <h3 class="doc-chapter-subtitle">避免在视图方法中使用 JavaScript 语句</h3>
+            <p>JavaScript 语句通常需要更改 HTML 树的嵌套结构，使代码变得冗长和难以理解。创建虚拟 DOM 树的代码可能导致严重的性能问题（例如重新创建整个模版）。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+var BadListComponent = {
+    view: function(vnode) {
+        var list = []
+        for (var i = 0; i < vnode.attrs.items.length; i++) {
+            list.push(m("li", vnode.attrs.items[i]))
+        }
+
+        return m("ul", list)
+    }
+}'); ?></code></pre>
+            <p>推荐使用 JavaScript 表达式，例如三元运算符和 Array 方法。</p>
+            <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 推荐这种用法
+var BetterListComponent = {
+    view: function() {
+        return m("ul", vnode.attrs.items.map(function(item) {
+            return m("li", item)
+        }))
+    }
+}'); ?></code></pre>
+
+            <h3 class="doc-chapter-subtitle">避免在视图外创建 vnode</h3>
+            <p>当重绘时遇到一个 vnode 和之前渲染的 vnode 严格相等时，会跳过这个 vnode，不会更新其内容。虽然这看起来是一个优化性能的方式，但应该避免这种用法，因为这阻止了那个节点的动态更新 - 这会导致副作用，例如重绘时无法触发生命周期方法。</p>
+            <p>组件的文档中包含<a href="./components.html#avoid-creating-component-instances-outside-views">更多细节和一个这种反面模式的例子</a>。</p>
         </div>
 
     </div>

@@ -14,6 +14,14 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">ES6</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#introduction">介绍</a></li>
+            <li><a href="#setup">安装</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="introduction" class="doc-chapter-title mdui-text-color-theme"><a href="#introduction">介绍</a></h2>
         <div class="doc-chapter-content mdui-typo">
