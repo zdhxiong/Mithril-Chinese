@@ -14,6 +14,17 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">组件</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#structure">结构</a></li>
+            <li><a href="#passing-data-to-components">把数据传递到组件</a></li>
+            <li><a href="#lifecycle-methods">生命周期方法</a></li>
+            <li><a href="#state">状态</a></li>
+            <li><a href="#avoid-anti-patterns">避免反面模式</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="structure" class="doc-chapter-title mdui-text-color-theme"><a href="#structure">结构</a></h2>
         <div class="doc-chapter-content mdui-typo">

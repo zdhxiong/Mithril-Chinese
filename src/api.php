@@ -14,10 +14,33 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">API</h1>
+
     <div class="doc-chapter">
         <div class="doc-chapter-content mdui-typo">
             <p>下面列出了最常用的方法。如果哪个方法在下面没有列出，则说明那个方法用于高级用法。</p>
         </div>
+    </div>
+
+    <div class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#hyperscript">m(selector, attrs, children)</a></li>
+            <li><a href="#mount">m.mount(element, component)</a></li>
+            <li><a href="#route">m.route(root, defaultRoute, routes)</a></li>
+            <li><a href="#route-set">m.route.set(path)</a></li>
+            <li><a href="#route-get">m.route.get()</a></li>
+            <li><a href="#route-prefix">m.route.prefix(prefix)</a></li>
+            <li><a href="#route-link">m.route.link()</a></li>
+            <li><a href="#request">m.request(options)</a></li>
+            <li><a href="#jsonp">m.jsonp(options)</a></li>
+            <li><a href="#parseQueryString">m.parseQueryString(querystring)</a></li>
+            <li><a href="#buildQueryString">m.buildQueryString(object)</a></li>
+            <li><a href="#withAttr">m.withAttr(attrName, callback)</a></li>
+            <li><a href="#trust">m.trust(htmlString)</a></li>
+            <li><a href="#redraw">m.redraw()</a></li>
+        </ul>
+    </div>
+
+    <div class="doc-chapter">
 
         <h2 id="hyperscript" class="doc-chapter-title mdui-text-color-theme"><a href="#hyperscript">m(selector, attrs, children)</a> <small>- <a href="./hyperscript.html">文档</a></small></h2>
         <div class="doc-chapter-content mdui-typo">

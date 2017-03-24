@@ -14,6 +14,21 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">生命周期方法</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#usage">用法</a></li>
+            <li><a href="#the-dom-element-lifecycle">DOM 元素的生命周期</a></li>
+            <li><a href="#oninit">oninit</a></li>
+            <li><a href="#oncreate">oncreate</a></li>
+            <li><a href="#onupdate">onupdate</a></li>
+            <li><a href="#onbeforeremove">onbeforeremove</a></li>
+            <li><a href="#onremove">onremove</a></li>
+            <li><a href="#onbeforeupdate">onbeforeupdate</a></li>
+            <li><a href="#avoid-anti-patterns">避免反面模式</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="usage" class="doc-chapter-title mdui-text-color-theme"><a href="#usage">用法</a></h2>
         <div class="doc-chapter-content mdui-typo">

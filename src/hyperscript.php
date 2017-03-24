@@ -14,6 +14,28 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">m(selector, attributes, children)</h1>
+
+    <div class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#description">说明</a></li>
+            <li><a href="#signature">签名</a></li>
+            <li><a href="#how-it-works">工作原理</a></li>
+            <li><a href="#flexibility">灵活的参数</a></li>
+            <li><a href="#css-selectors">CSS 选择器</a></li>
+            <li><a href="#dom-attributes">DOM 属性</a></li>
+            <li><a href="#style-attribute">样式属性</a></li>
+            <li><a href="#events">事件</a></li>
+            <li><a href="#properties">属性</a></li>
+            <li><a href="#components">组件</a></li>
+            <li><a href="#lifecycle-methods">生命周期方法</a></li>
+            <li><a href="#keys">key</a></li>
+            <li><a href="#svg-and-mathml">SVG 和 MathML</a></li>
+            <li><a href="#making-templates-dynamic">使模版动态化</a></li>
+            <li><a href="#converting-html">HTML 转换为 hyperscript</a></li>
+            <li><a href="#avoid-anti-patterns">避免反面模式</a></li>
+        </ul>
+    </div>
+
     <div class="doc-chapter">
         <h2 id="description" class="doc-chapter-title mdui-text-color-theme"><a href="#description">说明</a></h2>
         <div class="doc-chapter-content mdui-typo">
@@ -86,7 +108,7 @@ var vnode = {tag: "div", attrs: {id: "box"}, children: [ /*...*/ ]}'); ?></code>
             <p>多次调用 <code>m.render()</code> 时，只会对 DOM 中发生变更的部分进行更改，并不会每次都重新创建 DOM 树，因为重新创建 DOM 是非常耗费资源的，且会导致失去输入框的焦点等问题。</p>
         </div>
 
-        <h2 id="flexibility" class="doc-chapter-title mdui-text-color-theme"><a href="#flexibility">灵活性</a></h2>
+        <h2 id="flexibility" class="doc-chapter-title mdui-text-color-theme"><a href="#flexibility">灵活的参数</a></h2>
         <div class="doc-chapter-content mdui-typo">
             <p><code>m()</code> 函数的参数非常灵活：</p>
             <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 简单的标签

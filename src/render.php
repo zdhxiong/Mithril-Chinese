@@ -14,6 +14,16 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">render(element, vnodes)</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#description">描述</a></li>
+            <li><a href="#signature">签名</a></li>
+            <li><a href="#differences-from-other-api-methods">和其他 API 方法的区别</a></li>
+            <li><a href="#standalone-usage">独立使用</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="description" class="doc-chapter-title mdui-text-color-theme"><a href="#description">描述</a></h2>
         <div class="doc-chapter-content mdui-typo">
@@ -53,6 +63,7 @@ $vars['next'] = array(
                     <tr>
                         <th>返回</th>
                         <th></th>
+                        <th></th>
                         <th>返回 <code>undefined</code></th>
                     </tr>
                     </tfoot>
@@ -67,14 +78,9 @@ $vars['next'] = array(
             <p><code>m.render</code> 是同步的。</p>
         </div>
 
-        <h2 id="why-virtual-dom" class="doc-chapter-title mdui-text-color-theme"><a href="#why-virtual-dom">为什么使用虚拟 DOM</a></h2>
-        <div class="doc-chapter-content mdui-typo">
-
-        </div>
-
         <h2 id="differences-from-other-api-methods" class="doc-chapter-title mdui-text-color-theme"><a href="#differences-from-other-api-methods">和其他 API 方法的区别</a></h2>
         <div class="doc-chapter-content mdui-typo">
-
+            <p><code>m.render()</code> </p>
         </div>
 
         <h2 id="standalone-usage" class="doc-chapter-title mdui-text-color-theme"><a href="#standalone-usage">独立使用</a></h2>

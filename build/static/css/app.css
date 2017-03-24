@@ -152,7 +152,8 @@
   font-size: 1.2em !important;
   padding-bottom: 0.7em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  margin: 60px 0 0.8em 0 !important;
+  margin: -30px 0 0.8em 0 !important;
+  padding-top: 90px;
 }
 
 /* 底部翻页 */

@@ -3,11 +3,11 @@ $vars['title'] = 'Keys';
 $vars['filename'] = 'keys';
 $vars['prev'] = array(
     'filename' => 'lifecycle-methods',
-    'title' => '�������ڷ���'
+    'title' => '生命周期方法'
 );
 $vars['next'] = array(
     'filename' => 'autoredraw',
-    'title' => '�Զ��ػ�ϵͳ'
+    'title' => '自动重绘系统'
 );
 ?>
 <?php include SRC_PATH . '/public/header.php'; ?>
@@ -15,17 +15,17 @@ $vars['next'] = array(
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">Keys</h1>
     <div class="doc-chapter">
-        <h2 id="what-are-keys" class="doc-chapter-title mdui-text-color-theme"><a href="#what-are-keys"></a></h2>
+        <h2 id="what-are-keys" class="doc-chapter-title mdui-text-color-theme"><a href="#what-are-keys">什么是 Key</a></h2>
+        <div class="doc-chapter-content mdui-typo">
+            <p>Key 是一种允许在 NodeList 中对 DOM 元素进行重新排序的机制，</p>
+        </div>
+
+        <h2 id="how-to-use" class="doc-chapter-title mdui-text-color-theme"><a href="#how-to-use">如何使用</a></h2>
         <div class="doc-chapter-content mdui-typo">
 
         </div>
 
-        <h2 id="how-to-use" class="doc-chapter-title mdui-text-color-theme"><a href="#how-to-use">���ʹ��</a></h2>
-        <div class="doc-chapter-content mdui-typo">
-
-        </div>
-
-        <h2 id="debugging-key-related-issues" class="doc-chapter-title mdui-text-color-theme"><a href="#debugging-key-related-issues"></a></h2>
+        <h2 id="debugging-key-related-issues" class="doc-chapter-title mdui-text-color-theme"><a href="#debugging-key-related-issues">调试 Key 的相关问题</a></h2>
         <div class="doc-chapter-content mdui-typo">
             <h3 class="doc-chapter-subtitle">Avoid wrapper elements around keyed elements</h3>
 

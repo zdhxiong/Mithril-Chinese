@@ -14,6 +14,17 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1 class="doc-title mdui-text-color-theme">虚拟 DOM 节点</h1>
+
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a href="#basics">基础</a></li>
+            <li><a href="#structure">结构</a></li>
+            <li><a href="#vnode-types">vnode 类型</a></li>
+            <li><a href="#monomorphic-class">单态类</a></li>
+            <li><a href="#avoid-anti-patterns">避免反面模式（anti-patterns）</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter">
         <h2 id="basics" class="doc-chapter-title mdui-text-color-theme"><a href="#basics">基础</a></h2>
         <div class="doc-chapter-content mdui-typo">
