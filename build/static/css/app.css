@@ -20,15 +20,16 @@
   }
 }
 /* 页面标题 */
-.doc-title {
+.doc-container h1 {
   font-size: 24px;
   line-height: 32px;
   font-weight: 400;
   margin: 0 0 38px 0;
+  color: #3f51b5!important;
 }
 
 @media (min-width: 480px) {
-  .doc-title {
+  .doc-container h1 {
     font-size: 28px;
     line-height: 36px;
     margin: 0 0 44px 0;
@@ -36,7 +37,7 @@
 }
 
 @media (min-width: 840px) {
-  .doc-title {
+  .doc-container h1 {
     font-size: 34px;
     line-height: 40px;
     margin: 0 0 54px 0;
@@ -49,6 +50,7 @@
   font-size: 16px;
   position: relative;
   border-left: 3px solid;
+  color: #3f51b5!important;
 }
 
 .doc-toc a {
@@ -124,36 +126,52 @@
   padding: 0 0 80px 0;
 }
 
+.doc-chapter h2 a,
+.doc-chapter h3 a,
+.doc-chapter h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.doc-chapter h2,
+.doc-chapter h3,
+.doc-chapter h4 {
+  color: #3f51b5!important;
+}
+
+.doc-chapter h2 a:before,
+.doc-chapter h3 a:before,
+.doc-chapter h4 a:before {
+  background-color: transparent !important;
+}
+
 /* 正文二级标题 */
-.doc-chapter-title {
+.doc-chapter h2 {
   padding-bottom: 0.7em;
   font-weight: 400;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   margin: -20px 0 0.8em 0;
 }
-.doc-chapter-title a {
-  text-decoration: none;
-  color: inherit;
-}
-.doc-chapter-title:before {
+.doc-chapter h2:before {
   content: '';
   display: block;
   height: 90px;
   visibility: hidden;
 }
 
-.doc-chapter-content {
-
-}
-
 /* 正文的三级标题 */
-.doc-chapter-subtitle {
-  font-weight: 600 !important;
-  font-size: 1.2em !important;
+.doc-chapter h3 {
   padding-bottom: 0.7em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   margin: -30px 0 0.8em 0 !important;
   padding-top: 90px;
+  font-size: 20px;
+}
+
+.doc-chapter h4 {
+  font-size: 16px;
+  padding-top: 72px;
+  margin-top: -50px;
 }
 
 /* 底部翻页 */
@@ -239,8 +257,3 @@
   background-color: rgba(0, 0, 0, 0.02);
   user-select: none;
 }
-
-.doc-code code {
-  /*line-height: 1.4 !important;*/
-}
-

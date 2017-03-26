@@ -1,6 +1,6 @@
 <div class="mdui-collapse-item <?php if ($vars['section'] == 'api') {echo 'mdui-collapse-item-open';} ?>">
     <a href="./api.html" class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe335;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink-accent">&#xe335;</i>
         <div class="mdui-list-item-content">API</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
     </a>

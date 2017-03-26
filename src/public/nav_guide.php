@@ -1,6 +1,6 @@
 <div class="mdui-collapse-item <?php if ($vars['section'] == 'guide') {echo 'mdui-collapse-item-open';} ?>">
     <a href="./introduction.html" class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe865;</i>
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink-accent">&#xe865;</i>
         <div class="mdui-list-item-content">教程</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
     </a>

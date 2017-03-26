@@ -1,8 +1,8 @@
-<div class="doc-footer-nav mdui-color-theme">
+<div class="doc-footer-nav mdui-color-indigo">
   <div class="mdui-container">
     <div class="mdui-row">
       <?php if ($vars['prev']){ ?>
-      <a href="./<?php echo $vars['prev']['filename']; ?>.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+      <a href="./<?php echo $vars['prev']['filename']; ?>.html" class="mdui-ripple mdui-color-indigo mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">&#xe5c4;</i>
           <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
@@ -14,7 +14,7 @@
       <?php } ?>
 
       <?php if ($vars['next']){ ?>
-      <a href="./<?php echo $vars['next']['filename']; ?>.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+      <a href="./<?php echo $vars['next']['filename']; ?>.html" class="mdui-ripple mdui-color-indigo mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">&#xe5c8;</i>
           <span class="doc-footer-nav-direction">Next</span>

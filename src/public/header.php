@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.10.0/styles/github-gist.min.css"/>
     <link rel="stylesheet" href="./static/css/app.css"/>
 </head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar">
 <header class="mdui-appbar mdui-appbar-fixed">
-    <div class="mdui-toolbar mdui-color-theme">
+    <div class="mdui-toolbar mdui-color-indigo">
         <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
         <a href="./" class="mdui-typo-headline mdui-hidden-xs">Mithril</a>
         <a href="" class="mdui-typo-title"><?php echo $vars['title']; ?></a>
