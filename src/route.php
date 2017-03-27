@@ -344,8 +344,20 @@ m.route(document.body, "/home", {
 
         <h2 id="how-it-works"><a href="#how-it-works">工作原理</a></h2>
         <p>路由是一个允许创建单页面应用（SPA）的系统。例如应用可以从一个页面跳转到另一个页面，但不会导致整个页面刷新。</p>
+        <p>无刷新的路由切换功能由 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()">history.pushState</a> API 实现。使用该 API，开发者可以在页面载入后手动修改 URL，并载入该 URL 对应的内容，而无需刷新整个页面。</p>
 
         <h2 id="routing-strategies"><a href="#routing-strategies">路由策略</a></h2>
+        <p>路由策略决定了一个库如何实现路由。有三个常用的策略来实现 SPA 路由系统，每个策略都有各自的注意事项：</p>
+        <ul>
+            <li>使用 hash。使用这种策略的 URL 看起来是：<code>http://localhost/#!/page1</code></li>
+            <li>使用 querystring。使用这种策略的 URL 看起来是：<code>http://localhost/?/page1</code></li>
+            <li>使用 pathname。使用这种策略的 URL 看起来是：<code>http://localhost/page1</code></li>
+        </ul>
+        <p>使用 hash 策略可以在不支持 <code>history.pushState</code> 的浏览器上运行（IE9 及以下），因为它可以降级到使用 <code>onhashchange</code>。如果你的应用需要支持 IE9，请使用该策略。</p>
+        <p>使用 querystring 策略也可以支持 IE9，但它会降级使用重新加载整个页面。如果你需要支持锚链接，且服务端不支持 pathname 策略时，可以使用该策略。</p>
+        <p>使用 pathname 策略可以产生看起来很干净的 URL，但不支持 IE9，且需要在服务器为每个路由进行设置。如果你想要干净的 URL，且不需要支持 IE9，可以使用该策略。</p>
+        <p>使用 hash 策略的单页面应用通常会在 <code>#</code> 后面添加一个叹号，以指示使用 hash 作为路由机制，而不是链接到锚点。<code>#!</code> 字符串被称为 hashbang。</p>
+        <p>默认策略使用 hashbang。</p>
 
         <h2 id="typical-usage"><a href="#typical-usage">典型用法</a></h2>
         <p>通常，你需要先创建几个<a href="./components.html">组件</a>：</p>
