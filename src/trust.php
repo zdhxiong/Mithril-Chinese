@@ -14,6 +14,18 @@ $vars['next'] = array(
 
 <div class="mdui-container doc-container">
     <h1>trust(html)</h1>
+
+    <nav class="doc-toc">
+        <ul>
+            <li><a href="#description">描述</a></li>
+            <li><a href="#signature">签名</a></li>
+            <li><a href="#how-it-works">工作原理</a></li>
+            <li><a href="#security-considerations">安全方面的考虑</a></li>
+            <li><a href="#scripts-that-do-not-run">不运行的脚本</a></li>
+            <li><a href="#avoid-trusting-html">避免信任 HTML</a></li>
+        </ul>
+    </nav>
+
     <div class="doc-chapter mdui-typo">
         <h2 id="description"><a href="#description">描述</a></h2>
         <p>把 HTML 字符串转换为未经转义的 HTML。不要对未经过滤的用户输入数据使用 <code>m.trust</code>。</p>
@@ -99,7 +111,62 @@ data.description = "<a href=\'http://evil.com/login-page-that-steals-passwords.h
         <p>由于历史原因，浏览器会忽略通过 innerHTML 插入到 DOM 中的 <code><?php echo htmlentities('<script>'); ?></code> 标签。这样做是因为，一旦元素渲染完成（具有可访问的 innerHTML 属性），渲染引擎时不能退回到解析阶段的，如果脚本调用类似于 <code>document.write("")</code> 的代码的话，无法重新渲染。</p>
         <p>这种浏览器行为对于 jQuery 开发者可能会感到惊讶，因为 jQuery 实现了专门查找 script 标签，并执行代码。Mithril 遵守浏览器行为。如果需要 jQuery 的行为，你可以把代码从 HTML 字符串移动到 <code>oncreate</code> 生命周期方法中，或者直接使用 jQuery。</p>
 
-        <h2 id="avoid-trusting-html"><a href="#avoid-trusting-html">avoid-trusting-html</a></h2>
+        <h2 id="avoid-trusting-html"><a href="#avoid-trusting-html">避免信任 HTML</a></h2>
+        <p>应尽量避免使用 <code>m.trust</code>。除非你需要显示富文本，且没有其他更好的办法来获取所需结果。</p>
+        <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+m("div", m.trust("hello world"))
+
+// 推荐这种用法
+m("div", "hello world")'); ?></code></pre>
+
+        <h3 id="avoid-blind-copying-and-pasting">避免盲目的复制和粘贴</h3>
+        <p>一种常见的滥用 <code>m.trust</code> 的方式是使用第三方服务时，直接从第三方服务的教程中复制和粘贴 HTML 代码。在多数情况下，应该使用 vnode 来编写 HTML（通常通过 <a href="./hyperscript.html">m()</a> 函数来生成）</p>
+        <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('<!-- 加载 Facebook 的 JavaScript SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, \'script\', \'facebook-jssdk\'));</script>
+
+<!-- 按钮代码 -->
+<div class="fb-like"
+    data-href="http://www.your-domain.com/your-page.html"
+    data-layout="standard"
+    data-action="like"
+    data-show-faces="true">
+</div>'); ?></code></pre>
+        <p>这是一种不使用 <code>m.trust</code> 创建 Mithril 组件的方式：</p>
+        <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('var FacebookLikeButton = {
+    oncreate: function() {
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, \'script\', \'facebook-jssdk\'));
+    },
+    view: function() {
+        return [
+            m("#fb-root"),
+            m("#fb-like[data-href=http://www.your-domain.com/your-page.html][data-layout=standard][data-action=like][data-show-faces=true]")
+        ]
+    }
+}'); ?></code></pre>
+        <p>以上 Mithril 组件把 script 标签中的代码复制到了 <code>oncreate</code> 钩子中，并用 <a href="./hyperscript.html">m()</a> 语法声明了 HTML 标签。</p>
+
+        <h3 id="avoid-html-entities">避免使用 HTML 实体</h3>
+        <p>另一种常见的滥用 <code>m.trust</code> 的方式是将其用于 HTML 实体。你应该使用对应的 unicode 代替：</p>
+        <pre class="doc-code"><code class="lang-js"><?php echo htmlentities('// 避免这种用法
+m("h1", "Coca-Cola", m.trust("&trade;"))
+
+// 建议这种用法
+m("h1", "Coca-Cola™")'); ?></code></pre>
+        <p>可以表示为 HTML 实体的所有字符都有对应的 unicode，包括不可见的字符，如 <code>&nbsp;</code> 和 <code>&shy;</code>。</p>
+        <p>为了避免编码问题，应该把 JavaScript 文件的编码设置为 UTF-8，并在 HTML 文件中添加 <code><?php echo htmlentities('<meta charset="utf-8">'); ?></code></p>
     </div>
 </div>
 
