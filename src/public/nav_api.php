@@ -19,6 +19,5 @@
         <a href="./redraw.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'redraw') {echo 'mdui-list-item-active';}; ?>">m.redraw</a>
         <a href="./version.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'version') {echo 'mdui-list-item-active';}; ?>">m.version</a>
         <a href="./promise.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'promise') {echo 'mdui-list-item-active';}; ?>">Promise</a>
-        <a href="./stream.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'stream') {echo 'mdui-list-item-active';}; ?>">Stream</a>
     </div>
 </div>

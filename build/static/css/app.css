@@ -128,20 +128,23 @@
 
 .doc-chapter h2 a,
 .doc-chapter h3 a,
-.doc-chapter h4 a {
+.doc-chapter h4 a,
+.doc-chapter h5 a {
   text-decoration: none;
   color: inherit;
 }
 
 .doc-chapter h2,
 .doc-chapter h3,
-.doc-chapter h4 {
+.doc-chapter h4,
+.doc-chapter h5 {
   color: #3f51b5!important;
 }
 
 .doc-chapter h2 a:before,
 .doc-chapter h3 a:before,
-.doc-chapter h4 a:before {
+.doc-chapter h4 a:before,
+.doc-chapter h5 a:before {
   background-color: transparent !important;
 }
 
@@ -170,6 +173,12 @@
 
 .doc-chapter h4 {
   font-size: 16px;
+  padding-top: 72px;
+  margin-top: -50px;
+}
+
+.doc-chapter h5 {
+  font-size: 14px;
   padding-top: 72px;
   margin-top: -50px;
 }
