@@ -27,15 +27,15 @@
     </div>
   </div>
 </div>
-<script src="http://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
-<script src="./static/mdui/js/mdui.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/mdui/0.2.1/js/mdui.min.js"></script>
 <script>
+  var $$ = mdui.JQ;
   hljs.initHighlightingOnLoad();
 
   setTimeout(function () {
-    $('pre[data-filename]').each(function (i, pre) {
-      var $pre = $(pre);
+    $$('pre[data-filename]').each(function (i, pre) {
+      var $pre = $$(pre);
       var filename = $pre.data('filename');
       if (!filename) {
         return true;

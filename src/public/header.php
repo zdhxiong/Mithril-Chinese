@@ -7,8 +7,8 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <title><?php if ($vars['title']) {echo $vars['title'].' - ';} ?>Mithril 中文文档，中文教程</title>
-    <link rel="stylesheet" href="./static/mdui/css/mdui.min.css"/>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/9.10.0/styles/github-gist.min.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.2.1/css/mdui.min.css"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css"/>
     <link rel="stylesheet" href="./static/css/app.css"/>
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar">
