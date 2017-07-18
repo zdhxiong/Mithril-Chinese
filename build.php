@@ -10,7 +10,7 @@ define('SRC_PATH', realpath('./src'));
 define('BUILD_PATH', __DIR__ . '/build');
 
 $guide_files = array(
-    'introduction',
+    'index', // 原 introduction
     'installation',
     'simple-application',
     'jsx',

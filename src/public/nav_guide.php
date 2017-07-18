@@ -1,11 +1,11 @@
 <div class="mdui-collapse-item <?php if ($vars['section'] == 'guide') {echo 'mdui-collapse-item-open';} ?>">
-    <a href="./introduction.html" class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+    <a href="./index.html" class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink-accent">&#xe865;</i>
         <div class="mdui-list-item-content">教程</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
     </a>
     <div class="mdui-collapse-item-body mdui-list">
-        <a href="./introduction.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'introduction') {echo 'mdui-list-item-active';}; ?>">介绍</a>
+        <a href="./index.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'introduction') {echo 'mdui-list-item-active';}; ?>">介绍</a>
         <a href="./installation.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'installation') {echo 'mdui-list-item-active';}; ?>">安装</a>
         <a href="./simple-application.html" class="mdui-list-item mdui-ripple <?php if ($vars['filename'] == 'simple-application') {echo 'mdui-list-item-active';}; ?>">简单应用教程</a>
 

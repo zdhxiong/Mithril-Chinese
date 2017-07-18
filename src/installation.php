@@ -2,7 +2,7 @@
 $vars['title'] = '安装';
 $vars['filename'] = 'installation';
 $vars['prev'] = array(
-    'filename' => 'introduction',
+    'filename' => 'index', // 原 introduction
     'title' => '介绍'
 );
 $vars['next'] = array(
