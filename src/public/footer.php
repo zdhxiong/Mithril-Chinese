@@ -27,8 +27,8 @@
     </div>
   </div>
 </div>
-<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="//cdn.bootcss.com/mdui/0.2.1/js/mdui.min.js"></script>
+<script src="//cdn.w3cbus.com/library/highlight.js/10.1.1/highlight.min.js"></script>
+<script src="//cdn.w3cbus.com/library/mdui/0.4.3/js/mdui.min.js"></script>
 <script>
   var $$ = mdui.JQ;
   hljs.initHighlightingOnLoad();

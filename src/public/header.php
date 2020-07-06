@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <title><?php if ($vars['title']) {echo $vars['title'].' - ';} ?>Mithril 中文文档，中文教程</title>
-    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.2.1/css/mdui.min.css"/>
-    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css"/>
-    <link rel="stylesheet" href="./static/css/app.css"/>
+    <title><?= $vars['title'] ? $vars['title'].' - ' : '' ?>Mithril 中文文档，中文教程</title>
+    <link rel="preconnect" href="//cdn.w3cbus.com">
+    <link rel="stylesheet" href="//cdn.w3cbus.com/library/mdui/0.4.3/css/mdui.min.css"/>
+    <link rel="stylesheet" href="//cdn.w3cbus.com/library/highlight.js/10.1.1/styles/github-gist.min.css"/>
+    <link rel="stylesheet" href="//cdn.w3cbus.com/mithriljs.net/static/css/app.css"/>
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar">
 <header class="mdui-appbar mdui-appbar-fixed">
