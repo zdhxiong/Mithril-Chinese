@@ -28,14 +28,14 @@
   </div>
 </div>
 <script src="//cdn.w3cbus.com/library/highlight.js/10.1.1/highlight.min.js"></script>
-<script src="//cdn.w3cbus.com/library/mdui/0.4.3/js/mdui.min.js"></script>
+<script src="//cdn.w3cbus.com/library/mdui/1.0.0/js/mdui.min.js"></script>
 <script>
-  var $$ = mdui.JQ;
+  var $ = mdui.$;
   hljs.initHighlightingOnLoad();
 
   setTimeout(function () {
-    $$('pre[data-filename]').each(function (i, pre) {
-      var $pre = $$(pre);
+    $('pre[data-filename]').each(function (i, pre) {
+      var $pre = $(pre);
       var filename = $pre.data('filename');
       if (!filename) {
         return true;

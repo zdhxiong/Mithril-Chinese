@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <title><?= $vars['title'] ? $vars['title'].' - ' : '' ?>Mithril 中文文档，中文教程</title>
     <link rel="preconnect" href="//cdn.w3cbus.com">
-    <link rel="stylesheet" href="//cdn.w3cbus.com/library/mdui/0.4.3/css/mdui.min.css"/>
+    <link rel="stylesheet" href="//cdn.w3cbus.com/library/mdui/1.0.0/css/mdui.min.css"/>
     <link rel="stylesheet" href="//cdn.w3cbus.com/library/highlight.js/10.1.1/styles/github-gist.min.css"/>
     <link rel="stylesheet" href="//cdn.w3cbus.com/mithriljs.net/static/css/app.css"/>
 </head>
